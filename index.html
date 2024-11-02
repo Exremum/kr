@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль лыжника</title>
+    <style>
+        /* Основные стили */
+        body {
+            font-family: "Edu AU VIC WA NT Hand", cursive;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #e9d6e7; /* Нежно-голубой фон */
+        }
+
+        h2, h3 {
+            color: #444;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* О себе */
+        .about-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            background-color: #e68ea748;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .about-photo img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #afcde7;
+        }
+
+        .about-content h2 {
+            color: #888;
+            font-size: 20pt;
+        }
+
+        .about-content p {
+            font-size: 15pt;
+        }
+
+        /* Секция "Одни из лучших" */
+        .best-section {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .best-section h2 {
+            color: #888;
+            font-size: 25pt;
+            margin-bottom: 20px;
+        }
+
+        .best-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .best-card {
+            width: 200px;
+            background-color: #e6f4ff;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .best-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        /* Секция слайдера */
+        .slider-section {
+            background-color: #afcde7; /* Более мягкий голубой фон для слайдера */
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Скрывает переполнение */
+        }
+
+        .slider-container {
+            display: flex;
+            transition: transform 0.5s linear;
+            width: max-content; /* Использовать всю ширину контейнера */
+        }
+
+        .slider-card {
+            flex: 1 0 auto; /* Позволяет карточкам занимать равное пространство и не сжиматься */
+            max-width: 200px; /* Ограничение ширины карточек */
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center; /* Центрирование карточек */
+            padding: 10px;
+        }
+
+        .slider-card img {
+            width: 100%; /* Изображения занимают 100% ширины карточки */
+            height: auto; /* Высота автоматически подстраивается */
+            border-radius: 8px;
+            max-width: 150px; /* Максимальная ширина изображения */
+            margin: 0 auto; /* Центрирует изображение */
+        }
+
+        /* Медиа-запросы для адаптивности */
+        @media (min-width: 600px) {
+            .about-section {
+                flex-direction: row;
+                text-align: left;
+            }
+
+            .about-photo img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .slider-card {
+                min-width: 50%;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .slider-card {
+                min-width: 25%;
+            }
+        }
+
+        /* Мобильные стили */
+        @media (max-width: 768px) {
+            .slider-card {
+                max-width: 100%; /* Ширина карточек на мобильных устройствах */
+            }
+            .slider-container {
+                display: flex;
+                flex-wrap: wrap; /* Позволяет карточкам занимать несколько рядов */
+            }
+            .slider-card {
+                flex: 100%; /* Каждая карточка занимает 100% ширины в мобильной версии */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Блок "О себе" -->
+    <section class="about-section">
+        <div class="about-photo">
+            <img src="src/foto.jpg" alt="Фотография">
+        </div>
+        <div class="about-content">
+            <h2>Обо мне</h2>
+            <p>Привет! Меня зовут Ольга, я обожаю кататься на лыжах и бегать, участвую во всех соревнованиях, которые можно только найти! Лыжи – это моя страсть, и я стремлюсь быть одной из лучших. Природа, скорость, борьба с самим собой — вот что меня вдохновляет!</p>
+        </div>
+    </section>
+
+    <!-- Блок "Одни из лучших" -->
+    <section class="best-section">
+        <h2>ОДНИ ИЗ ЛУЧШИХ</h2>
+        <div class="best-grid">
+            <div class="best-card">
+                <img src="src/one/nizhe1.jpg" alt="Фото">
+                <p>Нижегородский лыжный марафон третье место 🥉</p>
+            </div>
+            <div class="best-card">
+                <img src="src/one/zapru1.jpg" alt="Фото">
+                <p>Запрудненская лыжня 2024. Первое место 🥇</p>
+            </div>
+            <div class="best-card">
+                <img src="src/one/bitce1.jpg" alt="Фото">
+                <p>Московский лыжный марафон в Битце 51 километр по морозу 👍🏻</p>
+            </div>
+            <div class="best-card">
+                <img src="src/one/razan1.jpg" alt="Фото">
+                <p>Рязанский лыжный марафон 50 км 2 место 🥈</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Блок со слайдером -->
+<section class="slider-section">
+    <div class="slider-container" id="sliderContainer">
+        <!-- Оригинальные слайды -->
+        <div class="slider-card">
+            <img src="src/gramat/zapru.jpg" alt="Фото 1">
+        </div>
+        <div class="slider-card">
+            <img src="src/gramat/razan.jpg" alt="Фото 2">
+        </div>
+        <div class="slider-card">
+            <img src="src/gramat/kros.jpg" alt="Фото 3">
+        </div>
+        <div class="slider-card">
+            <img src="src/gramat/nizhe.jpg" alt="Фото 4">
+    </div>
+</section>
+</body>
+</html>
